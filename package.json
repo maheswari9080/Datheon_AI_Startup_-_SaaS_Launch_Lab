@@ -1,0 +1,37 @@
+{
+  "name": "dealforge-ai",
+  "version": "1.0.0",
+  "description": "DealForge AI - The AI-Powered Proposal, Scope Risk & Instant Deal Closing Engine for B2B Agencies & Dev Studios",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node tests/run-all.js",
+    "seed": "node server/db/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-maheswari:maheswari9080/Datheon_AI_Startup_-_SaaS_Launch_Lab.git"
+  },
+  "keywords": [
+    "saas",
+    "ai",
+    "proposals",
+    "scope-creep",
+    "risk-analysis",
+    "stripe-payments",
+    "b2b",
+    "agency-tech"
+  ],
+  "author": "Maheswari <maheswari9080@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "stripe": "^17.7.0"
+  }
+}
