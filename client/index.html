@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealForge AI — Stop Losing Deals to 4-Day Turnarounds & Unpriced Scope Creep</title>
+  <meta name="description" content="DealForge AI turns discovery notes into interactive, legally defensive proposals with automated scope creep risk detection and instant Stripe card deposit closing.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="brand-logo" id="nav-brand-logo">
+        <div class="brand-icon">⚡</div>
+        <span>DealForge<span class="text-gradient">.ai</span></span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#features" id="nav-features-link">How It Works</a></li>
+          <li><a href="#calculator" id="nav-calculator-link">Risk Calculator</a></li>
+          <li><a href="#pricing" id="nav-pricing-link">Pricing</a></li>
+          <li><a href="#faq" id="nav-faq-link">FAQ</a></li>
+          <li><a href="app.html" class="btn btn-secondary" id="nav-login-btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Live MVP App →</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section container" id="hero-section">
+      <div class="hero-badge-wrap">
+        <span class="badge badge-indigo" id="hero-live-badge">⚡ VIP Early Access Cohort Open • 100 Founder Passes</span>
+      </div>
+
+      <h1 class="hero-title" id="hero-main-heading">
+        Stop Losing Deals to 4-Day Turnarounds.<br>
+        Stop Losing Margins to <span class="text-gradient">Unbudgeted Scope Creep</span>.
+      </h1>
+
+      <p class="hero-subtitle" id="hero-subheading">
+        Turn raw client discovery notes into interactive, legally defensive, milestone-backed proposals in 25 minutes. Built-in AI flags technical ambiguity before you quote, while embedded Stripe checkouts collect upfront project deposits on the spot.
+      </p>
+
+      <!-- Primary Waitlist Capture Box -->
+      <div class="glass-panel waitlist-card" id="waitlist-card-container">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Claim Your VIP Early Founder Access</h3>
+        <p style="font-size: 0.88rem; margin-bottom: 1.25rem; color: var(--text-muted);">
+          Join 180+ agency founders securing priority access to DealForge AI and locked-in lifetime pricing.
+        </p>
+
+        <form id="waitlist-form" novalidate>
+          <div class="form-group">
+            <label for="waitlist-name" class="form-label">Your Full Name</label>
+            <input type="text" id="waitlist-name" name="name" class="form-input" placeholder="e.g. Alex Rivera" required autocomplete="name">
+            <div class="form-hint" id="name-error" style="color: var(--color-danger); display: none;">Please provide your name.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="waitlist-email" class="form-label">Work / Agency Email</label>
+            <input type="email" id="waitlist-email" name="email" class="form-input" placeholder="alex@yourstudio.com" required autocomplete="email">
+            <div class="form-hint" id="email-error" style="color: var(--color-danger); display: none;">Please enter a valid work email address.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="waitlist-team-size" class="form-label">Agency Team Size</label>
+              <select id="waitlist-team-size" name="teamSize" class="form-select">
+                <option value="solo">Solo Consultant / Freelancer</option>
+                <option value="2-5" selected>2 – 5 team members</option>
+                <option value="6-15">6 – 15 team members</option>
+                <option value="16-50">16 – 50 team members</option>
+                <option value="50+">50+ team members</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="waitlist-plan-tier" class="form-label">Preferred Tier</label>
+              <select id="waitlist-plan-tier" name="preferredTier" class="form-select">
+                <option value="lifetime" selected>Founder Lifetime ($499 one-time)</option>
+                <option value="pro">Pro Subscription ($49/mo)</option>
+                <option value="free">Free Community Tier ($0/mo)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">
+              <input type="checkbox" id="waitlist-consent" required checked style="margin-top: 0.2rem;">
+              <span>I agree to receive early product updates and confirm that my proposal data will never be sold or used for public AI training.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="waitlist-submit-btn" style="width: 100%; padding: 0.95rem; font-size: 1rem; margin-top: 0.5rem;">
+            Get Early VIP Beta Access →
+          </button>
+        </form>
+
+        <!-- Dynamic Success Message Display -->
+        <div id="waitlist-success-panel" style="display: none; padding: 1.5rem; background: var(--color-success-bg); border: 1px solid var(--color-success); border-radius: var(--radius-md); text-align: center; margin-top: 1rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎉</div>
+          <h4 style="color: var(--color-success); margin-bottom: 0.5rem;">You're on the VIP Priority List!</h4>
+          <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 1rem;" id="waitlist-queue-text">
+            Your queue reservation has been confirmed. You are <strong id="waitlist-queue-position">#47</strong> in line.
+          </p>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.82rem; font-family: var(--font-mono); color: var(--brand-cyan);" id="waitlist-referral-link">
+            https://dealforge.ai/?ref=DF-VIP-9080
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Share your custom referral link to skip 5 spots in the queue!</p>
+        </div>
+
+        <div class="waitlist-stats">
+          <div class="avatars-group">
+            <div class="avatar-circle">MK</div>
+            <div class="avatar-circle">ST</div>
+            <div class="avatar-circle">JL</div>
+            <div class="avatar-circle">AR</div>
+            <div class="avatar-circle">+180</div>
+          </div>
+          <span>184 Agency Founders Waiting • 42 Lifetime Passes Left</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Scope Creep Risk Calculator -->
+    <section class="container" id="calculator" style="padding-bottom: 5rem;">
+      <div class="calculator-box" id="calc-widget-container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="badge badge-warning" style="margin-bottom: 0.75rem;">Interactive Assessment</span>
+          <h2>Calculate Your Agency's <span class="text-gradient">Scope Creep Risk Score</span></h2>
+          <p style="max-width: 620px; margin: 0 auto; font-size: 0.95rem;">
+            Test DealForge AI's proprietary estimation risk heuristic on your next prospective project.
+          </p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <div>
+              <label for="calc-project-value" class="form-label">Estimated Project Value ($USD)</label>
+              <input type="number" id="calc-project-value" class="form-input" value="25000" min="1000" step="1000">
+            </div>
+
+            <div>
+              <label for="calc-timeline-weeks" class="form-label">Delivery Timeline (Weeks)</label>
+              <input type="number" id="calc-timeline-weeks" class="form-input" value="6" min="1" max="52">
+            </div>
+
+            <div>
+              <label for="calc-third-party-apis" class="form-label">Third-Party External API Integrations</label>
+              <select id="calc-third-party-apis" class="form-select">
+                <option value="0">None (Pure Custom Code / Standard DB)</option>
+                <option value="1">1 – 2 Well-Documented APIs (Stripe, Twilio)</option>
+                <option value="3" selected>3 – 5 Legacy / Poorly Documented APIs</option>
+                <option value="6">Complex Enterprise ERP / Custom Webhooks (6+)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="calc-acceptance-clarity" class="form-label">Specification Clarity Level</label>
+              <select id="calc-acceptance-clarity" class="form-select">
+                <option value="high">Crystal Clear PRD with Figma Components</option>
+                <option value="medium" selected>Rough Notion Outline + Loom Video</option>
+                <option value="low">Verbal Discussion: "Like Uber meets Airbnb"</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-card" id="calc-result-box">
+            <span class="badge badge-danger" id="risk-badge">HIGH RISK DETECTED</span>
+            <div class="risk-meter risk-high" id="risk-score-display">78 / 100</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;" id="risk-explanation">
+              Vague specifications and multiple third-party API dependencies indicate high likelihood of unpriced client change requests.
+            </p>
+            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--radius-md); padding: 1rem; text-align: left;">
+              <div style="font-weight: 700; font-size: 0.85rem; color: #fca5a5; margin-bottom: 0.25rem;">DealForge AI Recommendation:</div>
+              <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 1.25rem;" id="risk-recommendations">
+                <li>Inject +25% contingency buffer ($6,250 reserve)</li>
+                <li>Add explicit 3rd-party sandbox delay disclaimer clause</li>
+                <li>Split delivery into 3 milestone escrow releases</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Pillars Feature Grid -->
+    <section class="pillars-section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge badge-indigo" style="margin-bottom: 0.75rem;">Engineered for Velocity</span>
+          <h2>The 3 Pillars of <span class="text-gradient">DealForge AI</span></h2>
+          <p>Everything you need to turn raw discovery calls into paid client deposits in under 2 hours.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="glass-panel pillar-card" id="pillar-studio">
+            <div class="pillar-icon">✍️</div>
+            <h3>1. AI Proposal Studio</h3>
+            <p>Paste raw meeting notes, transcripts, or bullet points. Our domain-tuned model organizes scope into clean deliverables, phasing, and milestone payment schedules in minutes.</p>
+            <div class="pillar-stat">⚡ 14 hours manual work reduced to 25 mins</div>
+          </div>
+
+          <div class="glass-panel pillar-card" id="pillar-radar">
+            <div class="pillar-icon">🛡️</div>
+            <h3>2. Predictive Scope Risk Radar</h3>
+            <p>Scans every deliverable for dangerous ambiguity triggers. Flags high-risk dependencies, suggests protective legal clauses, and calculates margin-safe price buffers automatically.</p>
+            <div class="pillar-stat">📈 Preserves 18%–30% project net profit</div>
+          </div>
+
+          <div class="glass-panel pillar-card" id="pillar-closing">
+            <div class="pillar-icon">💳</div>
+            <h3>3. Instant Stripe Deposit Closer</h3>
+            <p>Share a responsive, branded web proposal. Clients review interactive milestone timelines, sign digitally, and pay upfront project deposits ($1k–$10k) via credit card right inside the page.</p>
+            <div class="pillar-stat">⏱️ Cuts deposit collection from 11 days to 9 mins</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge badge-indigo" style="margin-bottom: 0.75rem;">Transparent Investment</span>
+          <h2>Simple, Transparent <span class="text-gradient">Pricing Tiers</span></h2>
+          <p>Select the plan that fits your studio. Upgrade, downgrade, or cancel at any time.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Free Tier -->
+          <div class="glass-panel pricing-card" id="pricing-card-free">
+            <h3>Community</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">For solo freelancers and developers</p>
+            <div class="pricing-price">$0 <span>/ month</span></div>
+            <ul class="pricing-features">
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 2 active proposals / month</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic scope templates & web viewer</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic risk score preview</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Standard digital signatures</li>
+            </ul>
+            <a href="#hero-section" class="btn btn-secondary" style="width: 100%;">Join Free Waitlist</a>
+          </div>
+
+          <!-- Pro Tier -->
+          <div class="glass-panel pricing-card pricing-featured" id="pricing-card-pro">
+            <span class="badge badge-indigo pricing-pill">MOST POPULAR</span>
+            <h3>Agency Pro</h3>
+            <p style="font-size: 0.88rem; color: #a5b4fc;">For fast-growing boutique digital studios</p>
+            <div class="pricing-price">$49 <span>/ month</span></div>
+            <ul class="pricing-features">
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Unlimited</strong> active proposals</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Full AI Scope Risk Radar</strong></li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Auto-injected protective legal clauses</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Instant Stripe Deposit Checkout</strong></li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom domain & remove watermark</li>
+            </ul>
+            <a href="#hero-section" class="btn btn-primary" style="width: 100%;">Claim Pro Early Access</a>
+          </div>
+
+          <!-- Lifetime Tier -->
+          <div class="glass-panel pricing-card" id="pricing-card-lifetime">
+            <span class="badge badge-warning pricing-pill">100 PASSES ONLY</span>
+            <h3>Founder Lifetime</h3>
+            <p style="font-size: 0.88rem; color: var(--color-warning);">One-time payment • Lifetime access</p>
+            <div class="pricing-price">$499 <span>one-time</span></div>
+            <ul class="pricing-features">
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Lifetime Pro license</strong> forever</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> All future updates & AI models included</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> VIP Founder Private Discord channel</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Direct product roadmap voting rights</li>
+              <li><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero recurring subscription fees</li>
+            </ul>
+            <a href="#hero-section" class="btn btn-secondary" style="width: 100%; border-color: var(--color-warning); color: var(--color-warning);">Reserve Lifetime Pass</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge badge-indigo" style="margin-bottom: 0.75rem;">Got Questions?</span>
+          <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+          <p>Everything you need to know about DealForge AI, security, and beta onboarding.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Will our prospective clients actually pay a deposit inside a web link?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes! Modern B2B buyers routinely charge $1,000–$5,000 upfront project deposits on corporate Amex/Visa cards to initiate sprint kickoffs immediately. For enterprise customers requiring purchase orders and net-30 invoicing, DealForge includes a one-click "Download Legally Executed PDF & Bank Wire Info" button.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do you train AI models on our proprietary agency proposals or client rates?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Never. We enforce a strict zero-data-retention policy for public LLM training. Your proposal deliverables, client names, hourly rates, and margins are AES-256 encrypted at rest and never shared with external model providers.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How does the AI Scope Risk Radar calculate risk scores?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Our risk algorithm was calibrated on 5,000+ real-world agency project disputes. It analyzes requirement specificity, passive language triggers, external API dependencies, and milestone spacing to assign a composite risk score from 1 to 100, recommending exact contingency buffers.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>When will the early beta cohort be invited to access DealForge?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              We are rolling out onboarding in batches of 25 agencies starting next week. Waitlist participants with the highest referral points receive immediate priority invitations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">
+          ⚡ DealForge<span class="text-gradient">.ai</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+          Empowering modern digital agencies to close faster, estimate smarter, and protect profit margins.
+        </p>
+      </div>
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-align: right;">
+        <div>© 2026 DealForge AI Inc. All rights reserved.</div>
+        <div style="margin-top: 0.25rem;">
+          <a href="#" style="color: var(--text-muted);">Privacy Policy</a> • 
+          <a href="#" style="color: var(--text-muted);">Terms of Service</a> • 
+          <a href="#" style="color: var(--text-muted);">Security Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/landing.js"></script>
+</body>
+</html>
