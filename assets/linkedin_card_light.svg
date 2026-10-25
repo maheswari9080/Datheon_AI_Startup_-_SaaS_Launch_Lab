@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="liBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
+    </linearGradient>
+    <linearGradient id="brandIndigo" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <filter id="liCardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <style>
+    .li-title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 36px; font-weight: 800; fill: #0f172a; letter-spacing: -0.5px; }
+    .li-sub { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 500; fill: #475569; }
+    .li-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 800; }
+    .li-stat-lbl { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; fill: #64748b; }
+    .pillar-name { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+    .pillar-desc { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #64748b; }
+  </style>
+
+  <!-- Background with crisp light border -->
+  <rect x="0" y="0" width="1200" height="630" rx="20" fill="url(#liBg)" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Top Ambient Glow Accents -->
+  <circle cx="1080" cy="90" r="150" fill="#4f46e5" opacity="0.06"/>
+  <circle cx="120" cy="540" r="140" fill="#0891b2" opacity="0.05"/>
+
+  <!-- Brand & Category Badge Header -->
+  <g transform="translate(60, 42)">
+    <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#brandIndigo)"/>
+    <text x="12" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#ffffff">⚡</text>
+    
+    <text x="52" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#0f172a">
+      DealForge<tspan fill="#4f46e5">.ai</tspan>
+    </text>
+
+    <!-- Top Badge -->
+    <rect x="760" y="4" width="320" height="32" rx="16" fill="#e0e7ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="780" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#4f46e5">
+      🚀 OFFICIAL PUBLIC LAUNCH
+    </text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="60" y="132" class="li-title">
+    <tspan x="60" dy="0">Stop Losing Deals to 4-Day Turnarounds.</tspan>
+    <tspan x="60" dy="46">Stop Losing Margins to <tspan fill="url(#brandIndigo)">Scope Creep</tspan>.</tspan>
+  </text>
+
+  <!-- Subheadline -->
+  <text x="60" y="222" class="li-sub">
+    <tspan x="60" dy="0">The AI proposal and margin shield engine engineered for B2B tech studios and agencies.</tspan>
+    <tspan x="60" dy="24">Turn rough discovery notes into interactive web proposals and collect instant Stripe deposits.</tspan>
+  </text>
+
+  <!-- 3 Pillars Row -->
+  <g transform="translate(60, 280)">
+    <!-- Pillar 1 -->
+    <g filter="url(#liCardShadow)">
+      <rect x="0" y="0" width="345" height="160" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="36" cy="36" r="18" fill="#e0e7ff"/>
+      <text x="26" y="42" font-size="16">✍️</text>
+      <text x="68" y="41" class="pillar-name">AI Proposal Studio</text>
+      <text x="20" y="80" class="pillar-desc">Transforms messy transcripts &amp; notes</text>
+      <text x="20" y="100" class="pillar-desc">into structured deliverables &amp; milestones.</text>
+      <text x="20" y="135" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#4f46e5">⚡ 14 HOURS ➔ 25 MINUTES</text>
+    </g>
+
+    <!-- Pillar 2 -->
+    <g transform="translate(365, 0)" filter="url(#liCardShadow)">
+      <rect x="0" y="0" width="345" height="160" rx="12" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+      <circle cx="36" cy="36" r="18" fill="#ede9fe"/>
+      <text x="26" y="42" font-size="16">🛡️</text>
+      <text x="68" y="41" class="pillar-name">Scope Risk Radar</text>
+      <text x="20" y="80" class="pillar-desc">Flags 11 ambiguity triggers &amp; auto-injects</text>
+      <text x="20" y="100" class="pillar-desc">protective contingency margin buffers.</text>
+      <text x="20" y="135" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#6d28d9">🛡️ PRESERVES 25% PROFIT</text>
+    </g>
+
+    <!-- Pillar 3 -->
+    <g transform="translate(730, 0)" filter="url(#liCardShadow)">
+      <rect x="0" y="0" width="345" height="160" rx="12" fill="#ffffff" stroke="#bbf7d0" stroke-width="1.5"/>
+      <circle cx="36" cy="36" r="18" fill="#dcfce7"/>
+      <text x="26" y="42" font-size="16">💳</text>
+      <text x="68" y="41" class="pillar-name">Instant Stripe Deposits</text>
+      <text x="20" y="80" class="pillar-desc">Clients review on mobile, sign digitally,</text>
+      <text x="20" y="100" class="pillar-desc">and pay $1k–$10k deposits via credit card.</text>
+      <text x="20" y="135" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#15803d">⏱️ 11 DAYS ➔ 9 MINUTES</text>
+    </g>
+  </g>
+
+  <!-- Bottom Proof Bar -->
+  <line x1="60" y1="480" x2="1140" y2="480" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <g transform="translate(60, 510)">
+    <!-- Stat 1 -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="24" class="li-stat-num" fill="#4f46e5">184+</text>
+      <text x="0" y="42" class="li-stat-lbl">Agency Founders Waiting</text>
+    </g>
+
+    <!-- Stat 2 -->
+    <g transform="translate(240, 0)">
+      <text x="0" y="24" class="li-stat-num" fill="#059669">86.2%</text>
+      <text x="0" y="42" class="li-stat-lbl">Verified Gross Margin</text>
+    </g>
+
+    <!-- Stat 3 -->
+    <g transform="translate(480, 0)">
+      <text x="0" y="24" class="li-stat-num" fill="#0891b2">4.2d ➔ 2.2h</text>
+      <text x="0" y="42" class="li-stat-lbl">Deal Close Velocity</text>
+    </g>
+
+    <!-- Stat 4 -->
+    <g transform="translate(730, 0)">
+      <text x="0" y="24" class="li-stat-num" fill="#b45309">100 Passes</text>
+      <text x="0" y="42" class="li-stat-lbl">Founder Lifetime Access</text>
+    </g>
+
+    <!-- CTA Button -->
+    <g transform="translate(930, 6)">
+      <rect x="0" y="0" width="150" height="40" rx="8" fill="url(#brandIndigo)"/>
+      <text x="28" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff">
+        dealforge.ai →
+      </text>
+    </g>
+  </g>
+</svg>
