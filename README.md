@@ -8,8 +8,9 @@
 > Operational Deliverable developed under the Datheon AI Startup & SaaS Launch Lab Accelerator Framework.
 
 <p align="left">
+  <a href="https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/"><img src="https://img.shields.io/badge/GitHub_Pages-LIVE_DEMO-22c55e.svg" alt="Live Demo" /></a>
   <a href="#-automated-verification-suite"><img src="https://img.shields.io/badge/Verification_Suite-PASS_(4%2F4)-10b981.svg" alt="Verification Suite" /></a>
-  <a href="#-quick-start-guide"><img src="https://img.shields.io/badge/Node.js-v18%2B-6366f1.svg" alt="Node.js" /></a>
+  <a href="#-quick-start-guide"><img src="https://img.shields.io/badge/Node.js-18%2B-6366f1.svg" alt="Node.js" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-06b6d4.svg" alt="License" /></a>
   <a href="#-readiness-scorecard"><img src="https://img.shields.io/badge/Exit_Gates-100%25_PASS-10b981.svg" alt="Exit Gate" /></a>
   <a href="linkedin.md"><img src="https://img.shields.io/badge/LinkedIn-Official_Launch_Post-0077b5.svg" alt="LinkedIn Post" /></a>
@@ -82,6 +83,23 @@ The official launch package includes complete campaign copy and social graphics:
 <p align="center">
   <img src="image.png" alt="DealForge AI LinkedIn Announcement Graphic — Light Theme" width="95%" />
 </p>
+
+---
+
+## 🌐 Live Web Deployment (GitHub Pages)
+
+The full interactive web application is deployed live on GitHub Pages:
+🔗 **[https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/](https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/)**
+
+### Direct Application Links:
+- **Landing Page & Waitlist:** [`index.html`](https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/index.html)
+- **AI Proposal Studio & Scope Radar Dashboard:** [`app.html`](https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/app.html)
+- **Interactive Client Proposal Viewer & Stripe Checkout:** [`view.html?id=prop_demo_fintech`](https://maheswari9080.github.io/Datheon_AI_Startup_-_SaaS_Launch_Lab/view.html?id=prop_demo_fintech)
+
+### GitHub Pages Configuration
+In your repository settings (**Settings > Pages > Build and deployment > Source**), choose either:
+- **Option 1: GitHub Actions (Automated)** — The included `.github/workflows/deploy-pages.yml` workflow automatically tests, builds, and publishes on push to `main`.
+- **Option 2: Deploy from a branch** — Select Branch: `gh-pages` and Folder: `/ (root)`.
 
 ---
 

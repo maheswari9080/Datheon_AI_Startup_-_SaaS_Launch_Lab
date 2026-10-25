@@ -8,7 +8,9 @@
     "start": "node server/index.js",
     "dev": "node server/index.js",
     "test": "node tests/run-all.js",
-    "seed": "node server/db/seed.js"
+    "seed": "node server/db/seed.js",
+    "build": "node scripts/build-pages.js",
+    "deploy:gh-pages": "node scripts/deploy-gh-pages.js"
   },
   "repository": {
     "type": "git",
