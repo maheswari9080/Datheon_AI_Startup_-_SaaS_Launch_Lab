@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealForge AI — Agency Deal & Scope Intelligence Dashboard</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Auth Gate Container (Shown when unauthenticated) -->
+  <div id="auth-modal-overlay" class="modal-overlay" style="display: none;">
+    <div class="glass-panel modal-content" style="max-width: 440px;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div class="brand-icon" style="margin: 0 auto 0.75rem;">⚡</div>
+        <h2 id="auth-title">Sign in to <span class="text-gradient">DealForge AI</span></h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Access your agency proposal studio and risk pipeline.</p>
+      </div>
+
+      <form id="auth-form">
+        <div class="form-group" id="auth-name-group" style="display: none;">
+          <label for="auth-name" class="form-label">Full Name</label>
+          <input type="text" id="auth-name" class="form-input" placeholder="e.g. Alex Rivera">
+        </div>
+
+        <div class="form-group">
+          <label for="auth-email" class="form-label">Work Email</label>
+          <input type="email" id="auth-email" class="form-input" placeholder="alex@studio.com" value="founder@dealforge.ai" required>
+        </div>
+
+        <div class="form-group">
+          <label for="auth-password" class="form-label">Password</label>
+          <input type="password" id="auth-password" class="form-input" placeholder="••••••••" value="FounderDemo2026!" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width: 100%; margin-top: 0.75rem;">
+          Sign In →
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+        <span id="auth-toggle-prompt">Don't have an agency account?</span>
+        <button type="button" id="auth-toggle-btn" style="background: none; border: none; color: var(--brand-cyan); cursor: pointer; font-weight: 600; margin-left: 0.25rem;">
+          Create Free Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Workspace -->
+  <div class="app-layout" id="app-workspace">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <a href="/" class="brand-logo" style="margin-bottom: 1rem;">
+        <div class="brand-icon">⚡</div>
+        <span>DealForge<span class="text-gradient">.ai</span></span>
+      </a>
+
+      <div class="badge badge-indigo" id="sidebar-tier-badge" style="width: fit-content; margin-top: 0.5rem;">
+        PRO STUDIO PLAN
+      </div>
+
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" id="nav-dash-proposals">📁 Active Proposals</a></li>
+        <li><a href="#calculator" id="nav-dash-risk">🛡️ Scope Risk Radar</a></li>
+        <li><a href="#" id="nav-dash-pipeline">💰 Pipeline & Deposits</a></li>
+        <li><a href="#" id="upgrade-plan-btn" style="color: var(--color-warning);">⭐ Upgrade / Lifetime</a></li>
+      </ul>
+
+      <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+        <div style="font-size: 0.8rem; color: var(--text-muted);" id="sidebar-user-agency">Apex Digital Studio</div>
+        <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.75rem;" id="sidebar-user-email">founder@dealforge.ai</div>
+        <button type="button" class="btn btn-secondary" id="logout-btn" style="width: 100%; padding: 0.4rem; font-size: 0.8rem;">
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="app-main">
+      <div class="app-header">
+        <div>
+          <h1 style="font-size: 1.75rem; margin-bottom: 0.25rem;">Proposal & Deal Intelligence</h1>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Review scope ambiguity, inject margin buffers, and track deposit checkouts.</p>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="open-new-proposal-btn">
+          ✨ New AI Proposal
+        </button>
+      </div>
+
+      <!-- Live KPI Metrics Row -->
+      <section class="metrics-row" aria-label="Key Performance Indicators">
+        <div class="glass-panel metric-card">
+          <div class="metric-label">Pipeline Value</div>
+          <div class="metric-value" id="kpi-pipeline-val">$46,500</div>
+          <div class="metric-sub">Across 2 Active Proposals</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-label">Upfront Deposits Secured</div>
+          <div class="metric-value" id="kpi-deposits-val" style="color: var(--color-success);">$5,075</div>
+          <div class="metric-sub">Via Stripe Test Checkout</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-label">Avg Scope Risk Score</div>
+          <div class="metric-value" id="kpi-risk-avg" style="color: var(--color-warning);">50 / 100</div>
+          <div class="metric-sub">+17.5% Avg Margin Buffer</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-label">Turnaround Velocity</div>
+          <div class="metric-value" style="color: var(--brand-cyan);">2.2 hrs</div>
+          <div class="metric-sub">vs 4.2-day Industry Average</div>
+        </div>
+      </section>
+
+      <!-- Proposals List Section -->
+      <section class="glass-panel" style="padding: 1.75rem;">
+        <div class="table-header-controls">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Proposals</button>
+            <button class="filter-tab" data-filter="published">Published</button>
+            <button class="filter-tab" data-filter="viewed">Viewed by Client</button>
+            <button class="filter-tab" data-filter="paid">Deposit Paid</button>
+          </div>
+
+          <div style="font-size: 0.85rem; color: var(--text-muted);" id="proposals-count-label">
+            Showing 2 proposals
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="proposals-table" id="proposals-table">
+            <thead>
+              <tr>
+                <th>Project / Client</th>
+                <th>Contract Value</th>
+                <th>Upfront Deposit</th>
+                <th>Scope Risk</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="proposals-tbody">
+              <!-- Dynamically rendered rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="proposals-empty-state" style="display: none; text-align: center; padding: 3rem 1rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
+          <h3>No Proposals Found</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Create your first AI-scoped proposal to protect deal margins.</p>
+          <button class="btn btn-primary" id="empty-create-btn">Create Proposal</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Create Proposal Modal Dialog -->
+  <div id="new-proposal-modal" class="modal-overlay" style="display: none;">
+    <div class="glass-panel modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.4rem;">Generate <span class="text-gradient">AI-Protected Proposal</span></h2>
+        <button type="button" id="close-proposal-modal" style="background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <form id="create-proposal-form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="prop-client-name">Client Organization Name</label>
+            <input type="text" id="prop-client-name" class="form-input" placeholder="e.g. Acme Corp" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prop-client-email">Client Contact Email</label>
+            <input type="email" id="prop-client-email" class="form-input" placeholder="client@acme.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prop-project-title">Project Title</label>
+          <input type="text" id="prop-project-title" class="form-input" placeholder="e.g. Enterprise Mobile App MVP" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="prop-project-value">Contract Value ($)</label>
+            <input type="number" id="prop-project-value" class="form-input" value="28000" min="1000" step="500" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prop-deposit-pct">Deposit Required (%)</label>
+            <input type="number" id="prop-deposit-pct" class="form-input" value="30" min="10" max="100" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prop-timeline">Timeline (Weeks)</label>
+            <input type="number" id="prop-timeline" class="form-input" value="6" min="1" max="52" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prop-scope-notes">Discovery Notes / Rough Deliverables</label>
+          <textarea id="prop-scope-notes" class="form-input" rows="4" placeholder="Paste rough meeting notes, e.g.: Build React web dashboard with Stripe billing, real-time Slack notifications, and CSV bulk data exports." required></textarea>
+        </div>
+
+        <div style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-md); padding: 0.9rem; margin-bottom: 1.25rem;">
+          <div style="font-weight: 700; font-size: 0.85rem; color: #a5b4fc; margin-bottom: 0.25rem;">⚡ DealForge AI Automation:</div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">
+            Our engine will break down deliverables, score scope creep risk, calculate contingency margin buffers, and generate an interactive client viewer with Stripe test checkout.
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button type="button" class="btn btn-secondary" id="cancel-proposal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="generate-proposal-submit">
+            Analyze & Generate Proposal →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Upgrade Modal for Test Stripe Plan Checkout -->
+  <div id="upgrade-modal" class="modal-overlay" style="display: none;">
+    <div class="glass-panel modal-content" style="max-width: 500px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.35rem;">Unlock <span class="text-gradient">Agency Scale</span></h2>
+        <button type="button" id="close-upgrade-modal" style="background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Simulate Stripe test checkout to activate recurring Pro subscription or Founder Lifetime access.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="border: 1px solid var(--brand-primary); border-radius: var(--radius-md); padding: 1.25rem; background: rgba(99, 102, 241, 0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 700; font-size: 1.1rem;">Agency Pro Monthly</div>
+            <div style="font-weight: 800; font-size: 1.25rem;">$49 / mo</div>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.5rem 0 1rem;">
+            Unlimited proposals, full AI Scope Risk Radar, auto-injected protective clauses.
+          </p>
+          <button class="btn btn-primary" id="checkout-pro-btn" style="width: 100%;">
+            Start Test Stripe Checkout ($49/mo) →
+          </button>
+        </div>
+
+        <div style="border: 1px solid var(--color-warning); border-radius: var(--radius-md); padding: 1.25rem; background: rgba(245, 158, 11, 0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--color-warning);">Founder Lifetime Deal</div>
+            <div style="font-weight: 800; font-size: 1.25rem; color: var(--color-warning);">$499 one-time</div>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.5rem 0 1rem;">
+            Lifetime Pro access, VIP Discord community, zero recurring fees forever.
+          </p>
+          <button class="btn btn-secondary" id="checkout-lifetime-btn" style="width: 100%; border-color: var(--color-warning); color: var(--color-warning);">
+            Claim Test Lifetime Pass ($499) →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
