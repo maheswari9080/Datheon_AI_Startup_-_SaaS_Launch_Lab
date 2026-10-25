@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Project Proposal & Scope Agreement — DealForge AI</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    .viewer-container {
+      max-width: 900px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .proposal-card {
+      padding: 3rem;
+      margin-bottom: 2rem;
+    }
+    .deliverable-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .milestone-box {
+      padding: 1.25rem;
+      background: rgba(13, 18, 29, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sign-box {
+      background: rgba(99, 102, 241, 0.06);
+      border: 1px solid var(--brand-primary);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Proposal Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <div style="font-weight: 800; font-size: 1.05rem;" id="prop-view-agency">Apex Digital Studio</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Verified Proposal via DealForge AI</div>
+        </div>
+      </div>
+
+      <div id="prop-header-status-badge">
+        <span class="badge badge-indigo">Awaiting Client Review</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="viewer-container">
+    <div class="glass-panel proposal-card" id="proposal-content-card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-indigo" style="margin-bottom: 0.5rem;" id="prop-category-badge">Project Proposal</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;" id="prop-view-title">Next-Gen Mobile Wealth Management App</h1>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            Prepared exclusively for <strong id="prop-view-client" style="color: var(--text-primary);">Nesta Financial Inc.</strong>
+          </p>
+        </div>
+
+        <div style="text-align: right; background: var(--bg-card-solid); padding: 1.25rem 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Total Project Value</div>
+          <div style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary);" id="prop-view-total">$32,000</div>
+          <div style="font-size: 0.85rem; color: var(--color-success); font-weight: 600;" id="prop-view-deposit-info">
+            $9,600 (30%) Deposit to Initiate Sprint Zero
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope Breakdown -->
+      <section style="margin-bottom: 2.5rem;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">1. Deliverables & Specifications</h3>
+        <div id="prop-view-deliverables">
+          <!-- Deliverables populated dynamically -->
+        </div>
+      </section>
+
+      <!-- Phased Milestone Schedule -->
+      <section style="margin-bottom: 2.5rem;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">2. Milestone Escrow Schedule</h3>
+        <div id="prop-view-milestones">
+          <!-- Milestones populated dynamically -->
+        </div>
+      </section>
+
+      <!-- Protective Terms & SLA -->
+      <section style="margin-bottom: 2.5rem;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">3. Delivery Terms & Scope Boundary Clauses</h3>
+        <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;" id="prop-view-clauses">
+          <!-- Clauses populated dynamically -->
+        </ul>
+      </section>
+
+      <!-- Acceptance & Stripe Instant Deposit Section -->
+      <section class="sign-box" id="proposal-action-box">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Accept Proposal & Initiate Kickoff</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Sign below to approve scope and proceed to secure Stripe test checkout for the initial project deposit.
+        </p>
+
+        <form id="sign-proposal-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label class="form-label" for="client-signer-name">Authorized Signatory Name</label>
+              <input type="text" id="client-signer-name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+            </div>
+            <div>
+              <label class="form-label" for="client-signer-email">Billing / Accounts Payable Email</label>
+              <input type="email" id="client-signer-email" class="form-input" placeholder="e.vance@nestafinancial.com" required>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
+              <input type="checkbox" id="client-terms-consent" required checked style="margin-top: 0.2rem;">
+              <span>I confirm that I have executive authority to approve this scope of work and agree to the milestone payment schedule.</span>
+            </label>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary" id="sign-and-pay-btn" style="padding: 1rem 1.75rem; font-size: 1rem;">
+              💳 Sign & Pay Deposit via Stripe Test Checkout →
+            </button>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">
+              🔒 256-bit encrypted • Stripe Test Mode (No real charges)
+            </span>
+          </div>
+        </form>
+
+        <!-- Post-Payment Confirmed State -->
+        <div id="payment-success-box" style="display: none; padding: 1.5rem; background: var(--color-success-bg); border: 1px solid var(--color-success); border-radius: var(--radius-md); text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎉</div>
+          <h4 style="color: var(--color-success); margin-bottom: 0.5rem;">Proposal Executed & Deposit Paid!</h4>
+          <p style="font-size: 0.9rem; color: var(--text-primary);" id="payment-receipt-text">
+            Transaction verified via Stripe webhook. Sprint zero architecture kickoff is scheduled.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+      Powered by <strong style="color: var(--brand-cyan);">DealForge AI</strong> • Automated Scope Protection & Deal Intelligence Engine
+    </div>
+  </footer>
+
+  <script src="js/proposalView.js"></script>
+</body>
+</html>
