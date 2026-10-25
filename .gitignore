@@ -27,3 +27,9 @@ Thumbs.db
 coverage/
 logs/
 *.log
+
+# Allow documentation assets and LinkedIn visual exports
+!docs/assets/
+!docs/assets/*.svg
+!docs/assets/*.png
+!image.png

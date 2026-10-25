@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460">
+  <defs>
+    <linearGradient id="priceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="pCardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <style>
+    .pr-title { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 26px; font-weight: 800; fill: #0f172a; }
+    .pr-sub { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; font-weight: 500; fill: #64748b; }
+    .tier-name { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .price-num { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 36px; font-weight: 800; }
+    .price-sub { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #64748b; }
+    .feature-item { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="460" rx="16" fill="url(#priceBg)" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Top Title -->
+  <text x="48" y="50" class="pr-title">Transparent Pricing Architecture &amp; Unit Economics</text>
+  <text x="48" y="74" class="pr-sub">Engineered for long-term solvency with verified 86.2% gross margins and 13.6-year operating runway.</text>
+
+  <!-- Card 1: Free Community -->
+  <g transform="translate(48, 100)" filter="url(#pCardShadow)">
+    <rect x="0" y="0" width="345" height="310" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="38" class="tier-name">Free Community</text>
+    <text x="24" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Solo freelancers &amp; developers</text>
+    
+    <text x="24" y="105" class="price-num" fill="#0f172a">$0 <tspan class="price-sub">/ month</tspan></text>
+    <line x1="24" y1="125" x2="321" y2="125" stroke="#f1f5f9" stroke-width="1"/>
+
+    <text x="24" y="155" class="feature-item">✓ 2 Active Proposals / Month</text>
+    <text x="24" y="180" class="feature-item">✓ Standard Web Viewer</text>
+    <text x="24" y="205" class="feature-item">✓ Basic Scope Risk Preview</text>
+    <text x="24" y="230" class="feature-item">✓ Digital Signature Capture</text>
+    <text x="24" y="255" class="feature-item" fill="#94a3b8">• DealForge watermark included</text>
+  </g>
+
+  <!-- Card 2: Agency Pro (Featured) -->
+  <g transform="translate(427, 90)" filter="url(#pCardShadow)">
+    <rect x="0" y="0" width="345" height="330" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="2.5"/>
+    
+    <!-- Popular badge -->
+    <rect x="220" y="14" width="105" height="22" rx="11" fill="#4f46e5"/>
+    <text x="232" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#ffffff">MOST POPULAR</text>
+
+    <text x="24" y="44" class="tier-name" fill="#4f46e5">Agency Pro</text>
+    <text x="24" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Growing boutique tech studios</text>
+    
+    <text x="24" y="112" class="price-num" fill="#4f46e5">$49 <tspan class="price-sub">/ month</tspan></text>
+    <line x1="24" y1="130" x2="321" y2="130" stroke="#e0e7ff" stroke-width="1"/>
+
+    <text x="24" y="160" class="feature-item">✓ <tspan font-weight="700">Unlimited</tspan> Proposals &amp; Sprints</text>
+    <text x="24" y="185" class="feature-item">✓ <tspan font-weight="700">Full AI Scope Risk Radar</tspan></text>
+    <text x="24" y="210" class="feature-item">✓ Auto-injected Legal Buffer Clauses</text>
+    <text x="24" y="235" class="feature-item">✓ <tspan font-weight="700">Instant Stripe Card Deposits</tspan></text>
+    <text x="24" y="260" class="feature-item">✓ Custom Domain &amp; White-label</text>
+    <text x="24" y="285" class="feature-item" fill="#059669">✓ 93.9% Net Margin Tier</text>
+  </g>
+
+  <!-- Card 3: Founder Lifetime -->
+  <g transform="translate(807, 100)" filter="url(#pCardShadow)">
+    <rect x="0" y="0" width="345" height="310" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Capped badge -->
+    <rect x="210" y="14" width="115" height="22" rx="11" fill="#fef3c7"/>
+    <text x="222" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#d97706">100 PASSES ONLY</text>
+
+    <text x="24" y="38" class="tier-name" fill="#b45309">Founder Lifetime</text>
+    <text x="24" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Early adopters &amp; agency owners</text>
+    
+    <text x="24" y="105" class="price-num" fill="#b45309">$499 <tspan class="price-sub">one-time</tspan></text>
+    <line x1="24" y1="125" x2="321" y2="125" stroke="#fef3c7" stroke-width="1"/>
+
+    <text x="24" y="155" class="feature-item">✓ <tspan font-weight="700">Lifetime Agency Pro License</tspan></text>
+    <text x="24" y="180" class="feature-item">✓ Zero recurring monthly fees</text>
+    <text x="24" y="205" class="feature-item">✓ VIP Founder Discord Community</text>
+    <text x="24" y="230" class="feature-item">✓ Direct product roadmap voting</text>
+    <text x="24" y="255" class="feature-item" fill="#b45309">✓ 13.6-Year Verified Solvency</text>
+  </g>
+</svg>

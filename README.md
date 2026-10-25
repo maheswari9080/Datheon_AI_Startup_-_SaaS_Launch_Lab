@@ -1,12 +1,19 @@
+<p align="center">
+  <img src="docs/assets/dealforge_hero_light.png" alt="DealForge AI Hero Banner — Light Theme" width="100%" />
+</p>
+
 # DealForge AI — Scope Risk & Proposal Intelligence Engine
 
 > **From Business Hypothesis to Validated Startup, Functional SaaS MVP & Market Launch**  
 > Operational Deliverable developed under the Datheon AI Startup & SaaS Launch Lab Accelerator Framework.
 
-[![Build Status](https://img.shields.io/badge/Verification_Suite-PASS_(4%2F4)-10b981.svg)](#-automated-verification-suite)
-[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-6366f1.svg)](#-quick-start-guide)
-[![License](https://img.shields.io/badge/License-MIT-06b6d4.svg)](LICENSE)
-[![Exit Gate](https://img.shields.io/badge/Exit_Gates-100%25_PASS-10b981.svg)](#-readiness-scorecard)
+<p align="left">
+  <a href="#-automated-verification-suite"><img src="https://img.shields.io/badge/Verification_Suite-PASS_(4%2F4)-10b981.svg" alt="Verification Suite" /></a>
+  <a href="#-quick-start-guide"><img src="https://img.shields.io/badge/Node.js-v18%2B-6366f1.svg" alt="Node.js" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-06b6d4.svg" alt="License" /></a>
+  <a href="#-readiness-scorecard"><img src="https://img.shields.io/badge/Exit_Gates-100%25_PASS-10b981.svg" alt="Exit Gate" /></a>
+  <a href="linkedin.md"><img src="https://img.shields.io/badge/LinkedIn-Official_Launch_Post-0077b5.svg" alt="LinkedIn Post" /></a>
+</p>
 
 ---
 
@@ -21,22 +28,68 @@
 
 ---
 
-## 🏗️ Repository Architecture & Workstreams
+## 🏗️ System Architecture & Data Pipeline
 
-| Workstream | Stage | Description | Documentation Artifacts | Verification Status |
-|:---|:---|:---|:---|:---:|
-| **Workstream 1** | Stage 1: Market Validation | Opportunity scoring, 5 customer interviews, AI sentiment extraction, 9-block Lean Canvas | [`docs/stage-1/`](docs/stage-1/) | **PASS** |
-| **Workstream 2** | Stage 2: Waitlist & Offer | Conversion copy, Free/Pro/Lifetime pricing models, accessible waitlist app, A/B protocol | [`docs/stage-2/`](docs/stage-2/) | **PASS** |
-| **Workstream 3** | Stage 3: Functional MVP | Fullstack SaaS app, JWT auth, AI scope risk analyzer, Stripe test checkout, webhook HMAC | [`docs/stage-3/`](docs/stage-3/) | **PASS** |
-| **Workstream 4** | Stage 4: Launch & Investors | Product Hunt launch kit, LinkedIn/Reddit campaigns, 10-slide deck, bottom-up unit economics | [`docs/stage-4/`](docs/stage-4/) | **PASS** |
+<p align="center">
+  <img src="docs/assets/dealforge_architecture_light.png" alt="DealForge AI System Architecture — Light Theme" width="100%" />
+</p>
+
+### Pipeline Overview
+1. **Intake & Discovery:** Ingests raw meeting transcripts, bullet points, and client scoping notes via structured REST API endpoints.
+2. **Scope Risk Radar:** Domain-tuned heuristic scanner flags 11 high-volatility ambiguity triggers (`real-time`, `sync`, `custom`), calculates an objective risk index (1–100), and auto-injects protective contingency buffers (+15% to +35%).
+3. **Proposal Studio:** Assembles structured deliverables, hours estimations, and phased milestone escrow schedules into a responsive web application.
+4. **Stripe Test Deposit Closer:** Clients review proposals on mobile, execute digital acceptance, and complete upfront project deposits ($1,000–$10,000) via server-side price-locked Stripe checkout.
+
+---
+
+## 🛡️ Scope Risk Radar & Margin Defense Matrix
+
+<p align="center">
+  <img src="docs/assets/dealforge_risk_matrix_light.png" alt="DealForge AI Scope Risk Matrix — Light Theme" width="100%" />
+</p>
+
+| Risk Level | Complexity Score | Prescribed Buffer | Protective Legal Safeguards Injected |
+|:---:|:---:|:---:|:---|
+| **Low Risk** | 10 – 40 / 100 | **+10% Buffer** | Standard deliverables boundary; 2 design revision rounds included. |
+| **Moderate Risk** | 41 – 69 / 100 | **+18% Buffer** | 3 business day client review SLA; additional revisions billed at $150/hr. |
+| **Critical Risk** | 70 – 98 / 100 | **+25% to +35% Buffer** | Third-party API outage disclaimer; 3-milestone escrow lock; non-refundable sprint zero deposit. |
+
+---
+
+## 💰 Pricing Architecture & Unit Economics
+
+<p align="center">
+  <img src="docs/assets/dealforge_pricing_light.png" alt="DealForge AI Pricing Architecture — Light Theme" width="100%" />
+</p>
+
+| Plan Tier | Price Point | Target Persona | Key Inclusions | Unit Economics & Margin |
+|:---|:---:|:---|:---|:---:|
+| **Free Community** | **$0 / month** | Freelancers & solo devs | 2 active proposals/mo, standard web viewer, digital signature | Top-of-funnel viral acquisition |
+| **Agency Pro** | **$49 / month** | Boutique tech studios | Unlimited proposals, Full AI Scope Risk Radar, Stripe deposits | **93.9% Gross Margin** ($2.95/mo cost) |
+| **Founder Lifetime** | **$499 one-time** | Early adopter founders | Lifetime Pro access, VIP Discord community, roadmap voting | **13.6-Year Verified Solvency** (100 passes) |
+
+---
+
+## 📣 Public Launch Campaign & Social Distribution
+
+The official launch package includes complete campaign copy and social graphics:
+- **LinkedIn Announcement Post:** [`linkedin.md`](linkedin.md) (Publication-ready narrative with problem storytelling and CTA)
+- **High-Resolution Launch Graphic:** [`image.png`](image.png) (2400 x 1260 px light-theme card, zero watermark)
+- **Product Hunt Launch Kit:** [`docs/stage-4/01_product_hunt_campaign.md`](docs/stage-4/01_product_hunt_campaign.md)
+- **Multi-Channel Social Strategy:** [`docs/stage-4/02_social_distribution_strategy.md`](docs/stage-4/02_social_distribution_strategy.md)
+- **10-Slide Investor Pitch Deck:** [`docs/stage-4/03_investor_pitch_deck.md`](docs/stage-4/03_investor_pitch_deck.md)
+
+<p align="center">
+  <img src="image.png" alt="DealForge AI LinkedIn Announcement Graphic — Light Theme" width="95%" />
+</p>
 
 ---
 
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher (Tested on v24.14.0)
-- **NPM**: v9.0.0 or higher
+- **Node.js**: 18.0.0 or higher (Tested on Node.js 24.14.0)
+- **NPM**: 9.0.0 or higher
 
 ### Installation & Execution
 ```bash
@@ -69,13 +122,13 @@ Visit the application in your browser:
 
 ## 🧪 Automated Verification Suite
 
-The repository contains a zero-dependency automated test suite covering all critical application workflows. Run tests at any time with:
+The repository contains an automated test suite covering all critical application workflows. Run tests at any time with:
 
 ```bash
 npm test
 ```
 
-### Verified Test Assertions
+### Verified Test Output
 ```
 ============================================================
 ⚡ DealForge AI — Automated Verification Suite
